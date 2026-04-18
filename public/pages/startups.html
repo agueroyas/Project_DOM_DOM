@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Startups - StartIt</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    
+    <link rel="stylesheet" href="../css/startups.css" />
+</head>
+
+<body>
+    <nav class="ex-navbar">
+        <div class="ex-navbar__inner">
+
+            
+            <div class="d-flex align-items-center gap-3">
+                <a href="#" class="ex-navbar__brand">Architectural Curator</a>
+                <ul class="ex-navbar__links d-none d-md-flex">
+                    <li><a href="#" class="active">Explore</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Network</a></li>
+                    <li><a href="#">Insights</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="ex-navbar__actions d-none d-md-flex">
+                <button class="ex-btn-contact">Contact</button>
+                <button class="ex-btn-invest">Invest Now</button>
+                <img src="../assets/images/avatar.png"
+                    alt="Investor profile avatar" class="ex-navbar__avatar" />
+            </div>
+
+        </div>
+    </nav>
+
+    <main class="ex-layout">
+
+        
+        <aside class="ex-sidebar">
+            <div class="ex-sidebar__panel custom-scrollbar">
+
+                
+                <div>
+                    <h2 class="ex-sidebar__heading">Curate</h2>
+                    <p class="ex-sidebar__subtext">Refine your deal flow to match your thesis.</p>
+                </div>
+
+                
+                <div>
+                    <span class="ex-filter__label">Sector Focus</span>
+                    <div class="ex-filter__checks">
+                        <label class="ex-check-label">
+                            <input type="checkbox" checked />
+                            <span>Fintech &amp; DeFi</span>
+                        </label>
+                        <label class="ex-check-label">
+                            <input type="checkbox" checked />
+                            <span>Climate Tech</span>
+                        </label>
+                        <label class="ex-check-label">
+                            <input type="checkbox" />
+                            <span>Deep Tech &amp; AI</span>
+                        </label>
+                        <label class="ex-check-label">
+                            <input type="checkbox" />
+                            <span>Digital Health</span>
+                        </label>
+                        <label class="ex-check-label">
+                            <input type="checkbox" />
+                            <span>Enterprise SaaS</span>
+                        </label>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <span class="ex-filter__label">Maturity Stage</span>
+                    <div class="ex-stage-pills">
+                        <button class="ex-pill">Pre-Seed</button>
+                        <button class="ex-pill ex-pill--active">Seed</button>
+                        <button class="ex-pill ex-pill--active">Series A</button>
+                        <button class="ex-pill">Series B+</button>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <span class="ex-filter__label">Target Allocation</span>
+                    <input type="range" class="ex-range" min="1" max="50" value="10" />
+                    <div class="ex-range-labels">
+                        <span>$1M</span>
+                        <span class="active">$10M – $25M</span>
+                        <span>$50M+</span>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+        
+        <section class="ex-content">
+
+            
+            <div>
+                <h1 class="ex-hero__title">
+                    Discover Emerging <br />
+                    <span class="accent">Market Leaders</span>
+                </h1>
+                <div class="ex-search-wrapper">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" class="ex-search-input"
+                        placeholder="Search startups, founders, or specific technologies..." />
+                </div>
+            </div>
+
+            
+            <div class="ex-cards-grid">
+                <!-- Startup cards will be dynamically rendered here -->
+            </div>
+
+            
+            <div class="ex-load-more">
+                <button class="ex-btn-load">Load More Opportunities</button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="ex-footer">
+        <div class="ex-footer__inner">
+            <p class="ex-footer__copy">© 2024 Architectural Curator. Institutional Grade Investing.</p>
+            <ul class="ex-footer__links">
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Regulatory Disclosures</a></li>
+                <li><a href="#">Investor Relations</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="../js/ui/searchLoad.js"></script> -->
+    <script src="../js/ui/startupsRenderer.js"></script>
+</body>
+
+</html>

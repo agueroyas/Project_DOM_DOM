@@ -1,0 +1,144 @@
+[
+    {
+        "id": 1,
+        "logo": {
+            "type": "image",
+            "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCLbQhT1gBeL2YCokIrm9t43m4_7ZsDJvqp3Q4YXxEO4JsD1_qF_2xBe98TPWgen7SsV7MqTQRobChsBCMu81h6_XQFIhycAm2xVii6uQVYnPgAw3TUlphAmPsdIZael5aeY47aqcVEM-gnmQCtkd2zup6ANUnCWOY4ZQfQpFCl4hIL_LaaTfUX9Hz_yV6aEi8X3OCVl8eW-J4MgINghV41ZbRDdsSKHHKPJd_ffu-j6bJrnGF9TjE56IAMSIAhfY-N8tj2C2Mc",
+            "alt": "Verdant Systems logo",
+            "mixBlend": true,
+            "padded": false
+        },
+        "badge": {
+            "text": "Open Round",
+            "variant": "teal"
+        },
+        "sector": "Climate Tech",
+        "name": "Verdant Systems",
+        "description": "Developing proprietary next-generation carbon capture technology utilizing engineered mycelium networks. Verdant's pilot facility demonstrates a 40% reduction in operational energy costs compared to direct air capture alternatives.",
+        "target": "$12.5M",
+        "stage": "Series A",
+        "highlight": false
+    },
+    {
+        "id": 2,
+        "logo": {
+            "type": "image",
+            "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuC3YDyYYLWv7CsJAoZJp-6m-xYNpTQCkjUHgqs7e6QlGxdPw_az6lo1iwh4tyfiRu5PNs_NGE3G-MOsk5cDxYVHdPuZpm2lUOsXTKdXb4QqyndKp87oYHWAGNUDcFBhBrlpIOInQlkqmNvT_3W1os-Swv-_djYpS7XfkGQTeIzZ7-tQrcMdiZvVtRJCIPkqdJXjOtMQUS4m6X7rrr7RYscKmAIN8IydgsUCc4eZ-YqoNADkNteARJaV4p4dq1z53QWcfHkO-FqJ",
+            "alt": "Axiom Ledger logo",
+            "mixBlend": false,
+            "padded": true
+        },
+        "badge": {
+            "text": "High Growth",
+            "variant": "green"
+        },
+        "sector": "Fintech / Enterprise SaaS",
+        "name": "Axiom Ledger",
+        "description": "Institutional-grade reconciliation engine for decentralized finance assets. Axiom automates complex tax reporting and compliance frameworks for Tier 1 banks entering the digital asset ecosystem.",
+        "target": "$25.0M",
+        "stage": "Series B",
+        "highlight": true
+    },
+    {
+        "id": 3,
+        "logo": {
+            "type": "icon",
+            "icon": "biotech"
+        },
+        "badge": {
+            "text": "Closing Soon",
+            "variant": "surface"
+        },
+        "sector": "Digital Health",
+        "name": "NeuroSync",
+        "description": "Non-invasive brain-computer interface wearables for early detection of neurological decline. Patented sensor array provides clinical-grade data mapping integrated with a physician-facing predictive analytics dashboard.",
+        "target": "$5.5M",
+        "stage": "Seed",
+        "highlight": false
+    },
+    {
+        "id": 4,
+        "logo": {
+            "type": "icon",
+            "icon": "memory"
+        },
+        "badge": {
+            "text": "Open Round",
+            "variant": "teal"
+        },
+        "sector": "Deep Tech & AI",
+        "name": "Quantum Core",
+        "description": "Photonic chip architecture designed specifically for running large language models at the edge. Quantum Core dramatically reduces thermal output and energy consumption for localized AI inference tasks.",
+        "target": "$18.0M",
+        "stage": "Series A",
+        "highlight": false
+    },
+    {
+        "id": 4,
+        "logo": {
+            "type": "icon",
+            "icon": "memory"
+        },
+        "badge": {
+            "text": "Open Round",
+            "variant": "teal"
+        },
+        "sector": "Deep Tech & AI",
+        "name": "Quantum Core",
+        "description": "Photonic chip architecture designed specifically for running large language models at the edge. Quantum Core dramatically reduces thermal output and energy consumption for localized AI inference tasks.",
+        "target": "$18.0M",
+        "stage": "Series A",
+        "highlight": false
+    },
+    {
+        "id": 4,
+        "logo": {
+            "type": "icon",
+            "icon": "memory"
+        },
+        "badge": {
+            "text": "Open Round",
+            "variant": "teal"
+        },
+        "sector": "Deep Tech & AI",
+        "name": "Quantum Core",
+        "description": "Photonic chip architecture designed specifically for running large language models at the edge. Quantum Core dramatically reduces thermal output and energy consumption for localized AI inference tasks.",
+        "target": "$18.0M",
+        "stage": "Series A",
+        "highlight": false
+    },
+    {
+        "id": 4,
+        "logo": {
+            "type": "icon",
+            "icon": "memory"
+        },
+        "badge": {
+            "text": "Open Round",
+            "variant": "teal"
+        },
+        "sector": "Deep Tech & AI",
+        "name": "Quantum Core",
+        "description": "Photonic chip architecture designed specifically for running large language models at the edge. Quantum Core dramatically reduces thermal output and energy consumption for localized AI inference tasks.",
+        "target": "$18.0M",
+        "stage": "Series A",
+        "highlight": false
+    },
+    {
+        "id": 4,
+        "logo": {
+            "type": "icon",
+            "icon": "memory"
+        },
+        "badge": {
+            "text": "Open Round",
+            "variant": "teal"
+        },
+        "sector": "Deep Tech & AI",
+        "name": "Quantum Core",
+        "description": "Photonic chip architecture designed specifically for running large language models at the edge. Quantum Core dramatically reduces thermal output and energy consumption for localized AI inference tasks.",
+        "target": "$18.0M",
+        "stage": "Series A",
+        "highlight": false
+    }
+]
