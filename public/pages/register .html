@@ -17,13 +17,11 @@ background:#f3f6fb;
 color:#0f172a;
 }
 
-
 .wrapper{
 display:grid;
 grid-template-columns: 1fr 1fr;
 min-height:100vh;
 }
-
 
 .left{
 background:linear-gradient(160deg,#0f172a,#1e293b);
@@ -54,7 +52,6 @@ font-size:14px;
 max-width:380px;
 }
 
-
 .shape{
 width:260px;height:260px;
 background:linear-gradient(45deg,#22c55e,#3b82f6);
@@ -64,7 +61,6 @@ margin-top:40px;
 filter:blur(1px);
 }
 
-
 .right{
 background:#ffffff;
 padding:60px 80px;
@@ -73,21 +69,10 @@ flex-direction:column;
 justify-content:center;
 }
 
-.step{
-font-size:12px;
-color:#64748b;
-margin-bottom:20px;
-}
-
 h1{
 margin:0;
 font-size:32px;
 margin-bottom: 3rem;
-}
-
-.subtitle{
-color:#64748b;
-margin-bottom:40px;
 }
 
 .roles{
@@ -125,9 +110,15 @@ border-radius:10px;
 border:1px solid #e2e8f0;
 margin-bottom:20px;
 font-size:14px;
+outline:none;
+transition:border-color .2s;
 }
 
-button{
+input:focus{
+border-color:#0f172a;
+}
+
+button[type="submit"]{
 width:100%;
 padding:14px;
 background:#0f172a;
@@ -137,8 +128,17 @@ border-radius:12px;
 font-weight:600;
 font-size:15px;
 cursor:pointer;
+transition:.2s;
 }
 
+button[type="submit"]:hover{
+background:#1e293b;
+}
+
+button[type="submit"]:disabled{
+opacity:0.6;
+cursor:not-allowed;
+}
 
 .logos{
 display:flex;
@@ -148,6 +148,44 @@ opacity:.5;
 font-size:12px;
 }
 
+.alert{
+padding:12px 16px;
+border-radius:10px;
+margin-bottom:16px;
+font-size:14px;
+display:none;
+}
+
+.alert.success{
+background:#dcfce7;
+color:#166534;
+border:1px solid #bbf7d0;
+display:block;
+}
+
+.alert.error{
+background:#fef2f2;
+color:#991b1b;
+border:1px solid #fecaca;
+display:block;
+}
+
+.login-link{
+text-align:center;
+margin-top:20px;
+font-size:14px;
+color:#64748b;
+}
+
+.login-link a{
+color:#0f172a;
+font-weight:600;
+text-decoration:none;
+}
+
+.login-link a:hover{
+text-decoration:underline;
+}
 
 @media(max-width:900px){
 .wrapper{grid-template-columns:1fr}
@@ -161,7 +199,6 @@ font-size:12px;
 
 <div class="wrapper">
 
-
 <div class="left">
 <div>
 <div class="logo">StartIt</div>
@@ -171,34 +208,35 @@ their first believers.
 </div>
 <div class="shape"></div>
 </div>
-
 <div class="quote">
 Trusted by founders from YC, Antler and Techstars.
 </div>
 </div>
 
-
 <div class="right">
+<h1>Create account</h1>
 
-
-<h1 >Create account</h1>
-
+<div id="alert" class="alert"></div>
 
 <div class="roles">
 <div class="role active" onclick="selectRole(this)">Investor</div>
 <div class="role" onclick="selectRole(this)">Startup</div>
 </div>
 
+<form id="registerForm" onsubmit="handleRegister(event)">
+<input type="hidden" id="roleInput" value="investor">
+
 <label>Full name</label>
-<input placeholder="Jane Smith">
+<input type="text" id="fullname" placeholder="Jane Smith" required>
 
 <label>Email</label>
-<input class="place" placeholder="jane@company.com">
+<input type="email" id="email" placeholder="jane@company.com" required>
 
 <label>Password</label>
-<input type="password" placeholder="••••••••">
+<input type="password" id="password" placeholder="••••••••" required>
 
-<button>Create account as Investor</button>
+<button type="submit" id="submitBtn">Create account as Investor</button>
+</form>
 
 <div class="logos">
 <span>YC</span>
@@ -207,22 +245,79 @@ Trusted by founders from YC, Antler and Techstars.
 <span>Seedcamp</span>
 </div>
 
+<div class="login-link">
+Already have an account? <a href="login.html">Log in</a>
+</div>
 </div>
 </div>
 
 <script>
-    let place=document.querySelector("button")
-    let base="Create account"
-function selectRole(el){
-document.querySelectorAll('.role').forEach(r=>r.classList.remove('active'))
-el.classList.add('active')
-if(el.innerHTML=="Investor"){
-place.innerHTML= base +" as Investor";
-}
-else{
-  place.innerHTML= base + " as Startup";  
+const API_BASE = 'https://dev-storage-c.pantheonsite.io/collab/domdom/api';
+let currentRole = 'investor';
+
+function selectRole(el) {
+    document.querySelectorAll('.role').forEach(r => r.classList.remove('active'));
+    el.classList.add('active');
+    currentRole = el.innerHTML.toLowerCase();
+    document.getElementById('roleInput').value = currentRole;
+    document.getElementById('submitBtn').textContent =
+        'Create account as ' + el.innerHTML;
 }
 
+function showAlert(message, type) {
+    const alert = document.getElementById('alert');
+    alert.textContent = message;
+    alert.className = 'alert ' + type;
+}
+
+function hideAlert() {
+    const alert = document.getElementById('alert');
+    alert.className = 'alert';
+}
+
+async function handleRegister(e) {
+    e.preventDefault();
+    hideAlert();
+
+    const fullname = document.getElementById('fullname').value.trim();
+    const email    = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const role     = document.getElementById('roleInput').value;
+    const btn      = document.getElementById('submitBtn');
+
+    if (!fullname || !email || !password) {
+        showAlert('Please fill in all fields.', 'error');
+        return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Creating account...';
+
+    try {
+        const response = await fetch(API_BASE + '/register.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ fullname, email, password, role })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            showAlert('Account created successfully! Redirecting to login...', 'success');
+            localStorage.setItem('registered_email', email);
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 2000);
+        } else {
+            showAlert(data.message || 'Registration failed. Please try again.', 'error');
+            btn.disabled = false;
+            btn.textContent = 'Create account as ' + (role === 'investor' ? 'Investor' : 'Startup');
+        }
+    } catch (err) {
+        showAlert('Connection error. Please check your internet and try again.', 'error');
+        btn.disabled = false;
+        btn.textContent = 'Create account as ' + (role === 'investor' ? 'Investor' : 'Startup');
+    }
 }
 </script>
 
