@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StartIt - Sign up</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Inter;
+background:#f3f6fb;
+color:#0f172a;
+}
+
+
+.wrapper{
+display:grid;
+grid-template-columns: 1fr 1fr;
+min-height:100vh;
+}
+
+
+.left{
+background:linear-gradient(160deg,#0f172a,#1e293b);
+color:white;
+padding:60px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+letter-spacing:.5px;
+}
+
+.big-text{
+font-size:40px;
+font-weight:700;
+line-height:1.2;
+max-width:420px;
+margin-top:80px;
+}
+
+.quote{
+opacity:.7;
+font-size:14px;
+max-width:380px;
+}
+
+
+.shape{
+width:260px;height:260px;
+background:linear-gradient(45deg,#22c55e,#3b82f6);
+border-radius:60px;
+transform:rotate(20deg);
+margin-top:40px;
+filter:blur(1px);
+}
+
+
+.right{
+background:#ffffff;
+padding:60px 80px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.step{
+font-size:12px;
+color:#64748b;
+margin-bottom:20px;
+}
+
+h1{
+margin:0;
+font-size:32px;
+margin-bottom: 3rem;
+}
+
+.subtitle{
+color:#64748b;
+margin-bottom:40px;
+}
+
+.roles{
+display:flex;
+gap:10px;
+margin-bottom:35px;
+}
+
+.role{
+padding:12px 18px;
+border:1px solid #e2e8f0;
+border-radius:10px;
+cursor:pointer;
+font-size:14px;
+transition:.2s;
+}
+
+.role.active{
+background:#0f172a;
+color:white;
+border-color:#0f172a;
+}
+
+label{
+font-size:12px;
+color:#64748b;
+display:block;
+margin-bottom:6px;
+}
+
+input{
+width:100%;
+padding:14px;
+border-radius:10px;
+border:1px solid #e2e8f0;
+margin-bottom:20px;
+font-size:14px;
+}
+
+button{
+width:100%;
+padding:14px;
+background:#0f172a;
+color:white;
+border:none;
+border-radius:12px;
+font-weight:600;
+font-size:15px;
+cursor:pointer;
+}
+
+
+.logos{
+display:flex;
+gap:25px;
+margin-top:30px;
+opacity:.5;
+font-size:12px;
+}
+
+
+@media(max-width:900px){
+.wrapper{grid-template-columns:1fr}
+.left{display:none}
+.right{padding:40px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+
+<div class="left">
+<div>
+<div class="logo">StartIt</div>
+<div class="big-text">
+Where startups meet
+their first believers.
+</div>
+<div class="shape"></div>
+</div>
+
+<div class="quote">
+Trusted by founders from YC, Antler and Techstars.
+</div>
+</div>
+
+
+<div class="right">
+
+
+<h1 >Create account</h1>
+
+
+<div class="roles">
+<div class="role active" onclick="selectRole(this)">Investor</div>
+<div class="role" onclick="selectRole(this)">Startup</div>
+</div>
+
+<label>Full name</label>
+<input placeholder="Jane Smith">
+
+<label>Email</label>
+<input class="place" placeholder="jane@company.com">
+
+<label>Password</label>
+<input type="password" placeholder="••••••••">
+
+<button>Create account as Investor</button>
+
+<div class="logos">
+<span>YC</span>
+<span>Techstars</span>
+<span>Antler</span>
+<span>Seedcamp</span>
+</div>
+
+</div>
+</div>
+
+<script>
+    let place=document.querySelector("button")
+    let base="Create account"
+function selectRole(el){
+document.querySelectorAll('.role').forEach(r=>r.classList.remove('active'))
+el.classList.add('active')
+if(el.innerHTML=="Investor"){
+place.innerHTML= base +" as Investor";
+}
+else{
+  place.innerHTML= base + " as Startup";  
+}
+
+}
+</script>
+
+</body>
+</html>
